@@ -24,7 +24,7 @@ The interface is the same, just web-based and running on a more powerful machine
 
 There's a very good book on **R for Data Science** that introduces many of the concepts in R for data manipulation and presentation.
 
-The full online tutorial is available at https://r4ds.had.co.nz/index.html
+The full online tutorial is available at https://r4ds.had.co.nz/explore-intro.html
 
 In particular, there are three tutorials that standout:
 
