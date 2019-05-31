@@ -5,8 +5,8 @@ Introduction to R
     -   [Install / Usage](#install-usage)
 -   [Good practices](#good-practices)
     -   [R Markdown](#r-markdown)
-    -   [Tidyverse](#tidyverse)
-    -   [ggplot2 *(part of tidyverse)*](#ggplot2-part-of-tidyverse)
+    -   [Data manipulation *(dplyr, part of tidyverse)*](#data-manipulation-dplyr-part-of-tidyverse)
+    -   [Data visualization *(ggplot part of tidyverse)*](#data-visualization-ggplot-part-of-tidyverse)
     -   [File/Code organization](#filecode-organization)
         -   [Projects](#projects)
         -   [Packages](#packages)
@@ -61,7 +61,7 @@ Some of the benefits of using R Markdown as reports/visualization instead of scr
     -   Everything outside the chunks of code are just text that is displayed in the report
 -   Generate an actual document to show the results, or multiple reports with different parameters
 
-Simple example of an R Markdown
+Simple example of an `.Rmd` file *(for those that work with python, this is equivalent to jupyter)*
 
 ![](rmarkdown.png)
 
@@ -79,7 +79,7 @@ Simple example of an R Markdown
     myfun(param$alpha, params$nreps)
     ```
 
-### Tidyverse
+### Data manipulation *(dplyr, part of tidyverse)*
 
 *Tidyverse page*: <https://www.tidyverse.org/>
 
@@ -117,7 +117,7 @@ diamonds %>%
     select(carat, cut)
 ```
 
-### ggplot2 *(part of tidyverse)*
+### Data visualization *(ggplot part of tidyverse)*
 
 *ggplot2* is a very powerful tool to generate graphics, it's also a bit complicated.
 
