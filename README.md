@@ -81,6 +81,8 @@ Simple example of an `.Rmd` file *(for those that work with python, this is equi
 
 ### Data manipulation *(dplyr, part of tidyverse)*
 
+![](manip.png)
+
 *Tidyverse page*: <https://www.tidyverse.org/>
 
 **Tutorial on data transformations**: <https://r4ds.had.co.nz/transform.html>
