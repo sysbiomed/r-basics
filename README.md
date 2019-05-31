@@ -4,7 +4,7 @@ Introduction to R
 -   [R Studio](#r-studio)
     -   [Install / Usage](#install-usage)
 -   [Good practices](#good-practices)
-    -   [Code organization](#code-organization)
+    -   [File/Code organization](#filecode-organization)
         -   [Projects](#projects)
         -   [Packages](#packages)
     -   [R Markdown](#r-markdown)
@@ -40,7 +40,9 @@ In particular, there are three tutorials that standout:
 3.  **Manipulation of data** using a clean syntax.
     -   <https://r4ds.had.co.nz/transform.html>
 
-### Code organization
+### File/Code organization
+
+![](clutter.jpg)
 
 -   Important in long running projects and for an easier reproducibility of your work.
 -   Example of such is to:

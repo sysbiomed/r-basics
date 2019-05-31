@@ -37,7 +37,9 @@ In particular, there are three tutorials that standout:
 1. **Manipulation of data** using a clean syntax.
     * https://r4ds.had.co.nz/transform.html
 
-### Code organization
+### File/Code organization
+
+![](clutter.jpg)
 
 * Important in long running projects and for an easier reproducibility of your work.
 * Example of such is to:
