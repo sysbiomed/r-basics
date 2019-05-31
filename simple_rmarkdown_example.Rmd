@@ -1,0 +1,23 @@
+---
+title: "Simple example"
+output: html_document
+---
+
+Hello!!
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+cat('Hello world!\n')
+```
+
+A random plot
+
+```{r}
+qplot(1:10, rnorm(10))
+```
+
+
