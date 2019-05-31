@@ -2,7 +2,8 @@ Introduction to R
 ================
 
 -   [R Studio](#r-studio)
--   [Good practices in R](#good-practices-in-r)
+    -   [Install / Usage](#install-usage)
+-   [Good practices](#good-practices)
     -   [Code organization](#code-organization)
         -   [Projects](#projects)
         -   [Packages](#packages)
@@ -13,20 +14,22 @@ Introduction to R
 R Studio
 --------
 
-This is a very useful interface for R programming language, allowing to manage files, code, reports, packages in a single user friendly interface.
+> This is a very useful interface for R programming language, allowing to manage files, code, reports, packages in a single user friendly interface.
 
 ![](rstudio.png)
 
-You can install locally on your computer ([download here](https://www.rstudio.com/products/rstudio/download/#download)), but **it is also avaliable on our lab's server** at <https://sels.tecnico.ulisboa.pt/rstudio>
+### Install / Usage
 
-The interface is the same, just web-based and running on a more powerful machine. Please ask for user credentials.
+-   Locally on your computer ([download here](https://www.rstudio.com/products/rstudio/download/#download))
+-   **Web browser friendly version** from our lab's server at <https://sels.tecnico.ulisboa.pt/rstudio>
+    -   The interface is the same, just web-based and running on a more powerful machine. Please ask for user credentials.
 
-Good practices in R
--------------------
+Good practices
+--------------
 
-There's a very good book on **R for Data Science** that introduces many of the concepts in R for data manipulation and presentation.
+**R for Data Science** introduces many of the concepts in R for data manipulation and presentation.
 
-The full online tutorial is available at <https://r4ds.had.co.nz/index.html>
+The full online tutorial is available at <https://r4ds.had.co.nz/explore-intro.html>
 
 In particular, there are three tutorials that standout:
 
@@ -39,25 +42,32 @@ In particular, there are three tutorials that standout:
 
 ### Code organization
 
-Having a good code organization is important in long running projects and for an easier reproducibility of your work.
-
-An example of such is to separate independent work between folders and break the code in separate files, such as function in scripts *(files with an `.R` extension)* and reports *(files with an `.Rmd` extension)*.
-
-`source('path/to/file')` is often used to load or reuse the code. I *(André)* would recommend using a package to better organize the code and reusability of the code.
+-   Important in long running projects and for an easier reproducibility of your work.
+-   Example of such is to:
+    -   Split independent work between folders
+    -   Split the code in separate files, such as:
+        -   function in scripts *(files with an `.R` extension)*
+        -   reports *(files with an `.Rmd` extension)*
+-   `source('path/to/file')` is often used to load or reuse the code
+-   `devtools::load_all()` To load all R scripts simultaneously
+    -   This is where a package is better as it loads all R code at once
 
 **Important** Please use on of either options below, projects or package, as keeping all your files in the home directory and working in that environment will lead to problems down the line.
 
 #### Projects
 
-This feature of R Studio is used to separate different contexts. It keeps files and environment variables separated.
+-   R Studio feature to separate different contexts.
+    -   It keeps files and environment variables separated.
 
 To create a new project you can use the menu:
 
 > File -&gt; New Project...
 
-or use the shortcut at the top right corner of the R Studio interface to create new projects or switch between available ones.
+*or use the shortcut at the top right corner of the R Studio interface to create new projects or switch between available ones.*
 
 Even if you only have on task it's better to keep it inside a single project, as this creates a directory and the same base path for all files in that project.
+
+![](new_project.png)
 
 #### Packages
 
@@ -84,9 +94,11 @@ To save a given dataset you just need to do: `usethis::use_data(sample_data)` an
 -   code under `/R` directory
 -   vignettes under `/vignettes` directory and use `devtools::load_all('.')` to load all functions and data!
 
+![](new_package.png)
+
 ### R Markdown
 
-**Analyze. Share. Reproduce.**
+*Analyze. Share. Reproduce.*
 
 > Your data tells a story. Tell it with R Markdown. Turn your analyses into high quality documents, reports, presentations and dashboards.
 
@@ -125,7 +137,7 @@ Simple example of an R Markdown
 
 ### Tidyverse
 
-**Tidyverse page**: <https://www.tidyverse.org/>
+*Tidyverse page*: <https://www.tidyverse.org/>
 
 **Tutorial on data transformations**: <https://r4ds.had.co.nz/transform.html>
 
@@ -167,4 +179,18 @@ diamonds %>%
 
 **Tutorial**: <https://r4ds.had.co.nz/data-visualisation.html>
 
+**Pro Tutorial**: <https://r4ds.had.co.nz/graphics-for-communication.html>
+
 **Cheatsheet** (very important!!): <https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf>
+
+Example:
+
+``` r
+library(ggplot2)
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point(aes(color = class)) +
+  geom_smooth(se = FALSE) +
+  theme_bw()
+```
+
+![](README_files/figure-markdown_github/unnamed-chunk-3-1.png)
