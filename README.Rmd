@@ -37,65 +37,6 @@ In particular, there are three tutorials that standout:
 1. **Manipulation of data** using a clean syntax.
     * https://r4ds.had.co.nz/transform.html
 
-### File/Code organization
-
-![](clutter.jpg)
-
-* Important in long running projects and for an easier reproducibility of your work.
-* Example of such is to:
-    * Split independent work between folders
-    * Split the code in separate files, such as:
-        * function in scripts *(files with an `.R` extension)* 
-        * reports *(files with an `.Rmd` extension)*
-
-* `source('path/to/file')` is often used to load or reuse the code
-* `devtools::load_all()` To load all R scripts simultaneously
-    * This is where a package is better as it loads all R code at once
-
-**Important** Please use on of either options below, projects or package, as keeping all your files in the home directory and working in that environment will lead to problems down the line.
-
-#### Projects
-
-* R Studio feature to separate different contexts.
-    * It keeps files and environment variables separated.
-
-To create a new project you can use the menu:
-
-> File -> New Project...
-
-*or use the shortcut at the top right corner of the R Studio interface to create new projects or switch between available ones.*
-
-Even if you only have on task it's better to keep it inside a single project, as this creates a directory and the same base path for all files in that project.
-
-![](new_project.png)
-
-#### Packages
-
-As a more powerful alternative for projects, you can work from an skeloton R package.
-
-When creating a new project you can choose to create an *R package* instead of an *empty new project*, which automatically creates all the necessary files and folders for having a working package.
-
-*Tip*: after creating the R Package, run the command `devtools::use_vignette('vignette.Rmd')` to create the vignette folders and your first report/vignette.
-
-**How is this better than me just having the files separated my own project or directory?**
-
-A: This forces you to have a good organization and have better chances of having reproducible code.
-
-* keep all functions in the `/R` folder
-* keep all rmarkdown reports the `/vignettes` folder
-* keep all data in the `/data` folder
-
-To load all functions instead of having to do `source('...')` to every file with an `.R` extension, you just need to load the package `devtools::load_all('.')` and loads all scripts in `/R` folder.
-
-To save a given dataset you just need to do: `usethis::use_data(sample_data)` and it saves it the `data/` folder. To load the dataset, you just do  `load(sample_data)` after loading the package.
-
-**Beginner's tip**: If you get confused with this, remember just the two concepts below and you're good to go!
-
-* code under `/R` directory
-* vignettes under `/vignettes` directory and use `devtools::load_all('.')` to load all functions and data!
-
-![](new_package.png)
-
 ### R Markdown
 
 *Analyze. Share. Reproduce.*
@@ -194,3 +135,61 @@ ggplot(mpg, aes(displ, hwy)) +
   theme_bw()
 ```
 
+### File/Code organization
+
+![](clutter.jpg)
+
+* Important in long running projects and for an easier reproducibility of your work.
+* Example of such is to:
+    * Split independent work between folders
+    * Split the code in separate files, such as:
+        * function in scripts *(files with an `.R` extension)* 
+        * reports *(files with an `.Rmd` extension)*
+
+* `source('path/to/file')` is often used to load or reuse the code
+* `devtools::load_all()` To load all R scripts simultaneously
+    * This is where a package is better as it loads all R code at once
+
+**Important** Please use on of either options below, projects or package, as keeping all your files in the home directory and working in that environment will lead to problems down the line.
+
+#### Projects
+
+* R Studio feature to separate different contexts.
+    * It keeps files and environment variables separated.
+
+To create a new project you can use the menu:
+
+> File -> New Project...
+
+*or use the shortcut at the top right corner of the R Studio interface to create new projects or switch between available ones.*
+
+Even if you only have on task it's better to keep it inside a single project, as this creates a directory and the same base path for all files in that project.
+
+![](new_project.png)
+
+#### Packages
+
+As a more powerful alternative for projects, you can work from an skeloton R package.
+
+When creating a new project you can choose to create an *R package* instead of an *empty new project*, which automatically creates all the necessary files and folders for having a working package.
+
+*Tip*: after creating the R Package, run the command `devtools::use_vignette('vignette.Rmd')` to create the vignette folders and your first report/vignette.
+
+**How is this better than me just having the files separated my own project or directory?**
+
+A: This forces you to have a good organization and have better chances of having reproducible code.
+
+* keep all functions in the `/R` folder
+* keep all rmarkdown reports the `/vignettes` folder
+* keep all data in the `/data` folder
+
+To load all functions instead of having to do `source('...')` to every file with an `.R` extension, you just need to load the package `devtools::load_all('.')` and loads all scripts in `/R` folder.
+
+To save a given dataset you just need to do: `usethis::use_data(sample_data)` and it saves it the `data/` folder. To load the dataset, you just do  `load(sample_data)` after loading the package.
+
+**Beginner's tip**: If you get confused with this, remember just the two concepts below and you're good to go!
+
+* code under `/R` directory
+* vignettes under `/vignettes` directory and use `devtools::load_all('.')` to load all functions and data!
+
+![](new_package.png)
